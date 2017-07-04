@@ -1,0 +1,25 @@
+{
+    "name": "asimlqt/microsoft-graph-oauth",
+    "type": "library",
+    "description": "Microsoft Graph OAuth",
+    "keywords": ["microsoft", "graph", "oauth", "api", "azure"],
+    "homepage": "https://github.com/asimlqt/microsoft-graph-oauth",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Asim Liaquat",
+            "email": "asimlqt22@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "league/oauth2-client": "^1.4",
+        "microsoft/microsoft-graph": "^1.0.1",
+        "asimlqt/encode-decode": "^0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asimlqt\\GraphOauth\\": "src"}
+    }
+}
