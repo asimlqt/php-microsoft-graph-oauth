@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Microsoft Graph OAuth",
     "keywords": ["microsoft", "graph", "oauth", "api", "azure"],
-    "homepage": "https://github.com/asimlqt/microsoft-graph-oauth",
+    "homepage": "https://github.com/asimlqt/php-microsoft-graph-oauth",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -20,6 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Asimlqt\\GraphOauth\\": "src"}
+            "Asimlqt\\GraphOauth\\": "src"
+        }
     }
 }
