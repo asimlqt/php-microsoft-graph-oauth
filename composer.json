@@ -1,5 +1,5 @@
 {
-    "name": "asimlqt/microsoft-graph-oauth",
+    "name": "asimlqt/php-microsoft-graph-oauth",
     "type": "library",
     "description": "Microsoft Graph OAuth",
     "keywords": ["microsoft", "graph", "oauth", "api", "azure"],
