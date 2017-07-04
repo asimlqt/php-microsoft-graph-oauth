@@ -171,7 +171,7 @@ class Provider
             $newAccessToken = $this->getProvider()->getAccessToken('refresh_token', [
                 'refresh_token' => $accesstoken->getRefreshToken()
             ]);
-            $this->storage->write($newAccessToken);
+            $this->storage->write($newAccessToken, $this->userIdentifier);
         }
 
         return $accesstoken;
