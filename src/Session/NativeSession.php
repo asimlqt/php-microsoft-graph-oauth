@@ -3,11 +3,11 @@
 namespace Asimlqt\GraphOauth\Session;
 
 /**
- * GlobalSession
+ * NativeSession
  *
  * @author Asim Liaquat <asimlqt22@gmail.com>
  */
-class GlobalSession implements SessionInterface
+class NativeSession implements SessionInterface
 {
     public function __construct()
     {
