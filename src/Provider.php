@@ -6,6 +6,8 @@ use League\OAuth2\Client\Provider\GenericProvider;
 use Asimlqt\GraphOauth\Storage\StorageInterface;
 use Asimlqt\GraphOauth\Session\SessionInterface;
 use League\OAuth2\Client\Token\AccessToken;
+use Asimlqt\GraphOauth\Storage\ReadException;
+use Asimlqt\GraphOauth\AccessTokenNotFoundException;
 
 /**
  * Provider
@@ -162,16 +164,23 @@ class Provider
     /**
      *
      * @return AccessToken
+     *
+     * @throws AccessTokenNotFoundException
      */
     public function getAccessToken()
     {
-        $accesstoken = $this->storage->read($this->userIdentifier);
+        try {
+            $accesstoken = $this->storage->read($this->userIdentifier);
+        } catch (ReadException $e) {
+            throw new AccessTokenNotFoundException();
+        }
 
         if ($accesstoken->hasExpired()) {
             $newAccessToken = $this->getProvider()->getAccessToken('refresh_token', [
                 'refresh_token' => $accesstoken->getRefreshToken()
             ]);
             $this->storage->write($newAccessToken, $this->userIdentifier);
+            return $newAccessToken;
         }
 
         return $accesstoken;
